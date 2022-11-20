@@ -1,0 +1,17 @@
+img {
+    width: 300px;
+}
+
+.nav-link{
+    font-size: 25px;
+}
+
+#navbarNav{
+    margin: 0px;
+    padding: 0;
+    background-color: #FF8100;
+}
+
+.container{
+    margin: 20px 10px 20px 10px;
+}

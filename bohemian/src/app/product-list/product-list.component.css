@@ -4,13 +4,43 @@ img{
 h1{
     text-align: center;
 }
+.columnas{
+    width: 70px;
+}
+.table{
+    margin-left: 0px;
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 50%;
+}
 table, tr{
     text-align: center;
     border: 1px solid black;
 }
+table th {
+    text-align: center;
+  }
 .clearance {
     background: lightgreen;
 }
 .sinStock{
     background: lightcoral;
+}
+.btnCarrito{
+    margin: 10px 2px 0 2px;
+    width: 30px;
+    height: 40px;
+    color: black;
+    background-color: gray;
+}
+.btnCarrito:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.inputCantidad{
+    margin-top: 10px;
+    width: 50px;
+    height: 40px;
 }

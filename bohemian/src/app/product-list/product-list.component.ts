@@ -15,8 +15,9 @@ export class ProductListComponent implements OnInit {
       type: "Espumante",
       characteristic: "Blanco",
       price: 420,
-      stock: 3200,
+      stock: 3,
       clearance: false,
+      quantity: 0,
     },
     {
       image: "assets/images/MalbecRutini.png",
@@ -26,6 +27,7 @@ export class ProductListComponent implements OnInit {
       price: 420,
       stock: 0,
       clearance: false,
+      quantity: 0,
     },
     {
       image: "assets/images/CervezaAntaresStout.png",
@@ -33,8 +35,9 @@ export class ProductListComponent implements OnInit {
       type: "Stout",
       characteristic: "Negra/tostada/cremosa",
       price: 270,
-      stock: 3000,
+      stock: 30,
       clearance: true,
+      quantity: 0,
     },
     {
       image: "assets/images/CervezaAntaresScotch.png",
@@ -44,6 +47,7 @@ export class ProductListComponent implements OnInit {
       price: 210,
       stock: 0,
       clearance: false,
+      quantity: 0,
     },
     {
       image: "assets/images/CervezaAntaresKolsch.png",
@@ -51,8 +55,9 @@ export class ProductListComponent implements OnInit {
       type: "Kolsch",
       characteristic: "Dorada/fresca/suave",
       price: 250,
-      stock: 1900,
+      stock: 7,
       clearance: false,
+      quantity: 0,
     },
     {
       image: "assets/images/CervezaAntaresHoney.png",
@@ -62,12 +67,27 @@ export class ProductListComponent implements OnInit {
       price: 200,
       stock: 1500,
       clearance: true,
+      quantity: 0,
     },
   ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  downQuantity(product: Product): void{
+    if(product.quantity > 0) 
+      product.quantity--;
+ }
+
+  upQuantity(product: Product): void{
+     if(product.quantity < product.stock) 
+      product.quantity++;
+  }
+
+  changeQuantity(event: Event, product: Product): void{
+    
   }
 
 }

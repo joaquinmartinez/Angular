@@ -1,5 +1,5 @@
 <h1>Lista de productos</h1>
-<table class="table table-hover">
+<table class="table table-hover table-sm">
     <thead>
         <tr>
             <th></th>
@@ -8,6 +8,7 @@
             <th>Caracteristicas</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compras</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,12 @@
             <td>{{product.price | currency}}</td>
             <td *ngIf="product.stock != 0">Stock disponible</td>
             <td *ngIf="product.stock == 0">SIN STOCK</td>
+            <button *ngIf="product.stock != 0" class="btnCarrito" (click)="downQuantity(product)">-</button>
+            <input *ngIf="product.stock != 0" class="inputCantidad"
+                type="number" 
+                [(ngModel)]="product.quantity"
+                (keyup)="changeQuantity($event, product)">
+            <button *ngIf="product.stock != 0" class="btnCarrito" (click)="upQuantity(product)">+</button>
         </tr>
         
         

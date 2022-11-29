@@ -1,0 +1,46 @@
+.containermensaje{
+    display: flex;
+    max-width: 600px;
+    min-height: 300px;
+}
+
+.containermensaje textarea{
+    resize: none;
+    width: 100%;
+    height: auto;
+}
+div{
+    margin-top: 10px;
+}
+
+#btn-enviar{
+    margin-left: 15px;
+}
+input{
+    margin-left: 5px;
+}
+
+
+.formulariocontacto{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px auto 20px auto;
+}
+
+.containermensaje{
+    display: flex;
+    width: 800px;
+}
+
+.mensaje {
+    height: 200px;
+    width: 700px;
+}
+
+.formulariocontacto p {
+    text-align: start;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}

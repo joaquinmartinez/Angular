@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductCartService } from '../product-cart.service';
 import { Product } from './Product';
 
 @Component({
@@ -11,7 +12,7 @@ export class ProductListComponent implements OnInit {
     
     {
       image: "assets/images/EspumanteDada.png",
-      name: "Vino",
+      name: "Vino Dada",
       type: "Espumante",
       characteristic: "Blanco",
       price: 420,
@@ -21,7 +22,7 @@ export class ProductListComponent implements OnInit {
     },
     {
       image: "assets/images/MalbecRutini.png",
-      name: "Vino",
+      name: "Vino Rutini",
       type: "Malbec",
       characteristic: "Tinto",
       price: 420,
@@ -31,7 +32,7 @@ export class ProductListComponent implements OnInit {
     },
     {
       image: "assets/images/CervezaAntaresStout.png",
-      name: "Cerveza",
+      name: "Cerveza Antares",
       type: "Stout",
       characteristic: "Negra/tostada/cremosa",
       price: 270,
@@ -41,7 +42,7 @@ export class ProductListComponent implements OnInit {
     },
     {
       image: "assets/images/CervezaAntaresScotch.png",
-      name: "Cerveza",
+      name: "Cerveza  Antares",
       type: "Scotch",
       characteristic: "Rubia/maltosa",
       price: 210,
@@ -51,7 +52,7 @@ export class ProductListComponent implements OnInit {
     },
     {
       image: "assets/images/CervezaAntaresKolsch.png",
-      name: "Cerveza",
+      name: "Cerveza Antares",
       type: "Kolsch",
       characteristic: "Dorada/fresca/suave",
       price: 250,
@@ -61,7 +62,7 @@ export class ProductListComponent implements OnInit {
     },
     {
       image: "assets/images/CervezaAntaresHoney.png",
-      name: "Cerveza",
+      name: "Cerveza Antares",
       type: "Honey",
       characteristic: "Rubia",
       price: 200,
@@ -71,23 +72,17 @@ export class ProductListComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(private cart: ProductCartService) { 
+    
+  }
 
   ngOnInit(): void {
   }
 
-  downQuantity(product: Product): void{
-    if(product.quantity > 0) 
-      product.quantity--;
- }
-
-  upQuantity(product: Product): void{
-     if(product.quantity < product.stock) 
-      product.quantity++;
-  }
-
-  changeQuantity(event: Event, product: Product): void{
-    
+  addToCart(product: Product): void{
+    this.cart.addToCart(product);
+    product.stock -= product.quantity;
+    product.quantity = 0;
   }
 
 }

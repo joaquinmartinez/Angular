@@ -6,21 +6,23 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
+import { CartComponent } from './cart/cart.component';
 
 import { FormsModule } from '@angular/forms';
 import { BohemianContactComponent } from './bohemian-contact/bohemian-contact.component';
 import { BohemianProductsComponent } from './bohemian-products/bohemian-products.component';
 import { BohemianSucursalesComponent } from './bohemian-sucursales/bohemian-sucursales.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    CarritoComprasComponent,
+    CartComponent,
     BohemianContactComponent,
     BohemianProductsComponent,
-    BohemianSucursalesComponent
+    BohemianSucursalesComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

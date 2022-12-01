@@ -1,0 +1,7 @@
+<h1>Carrito de compras</h1>
+<ul>
+    <li *ngFor="let product of (cartListProducts$ | async)">
+        <h5>{{product.name}}-{{product.type}}: Cantidad {{product.quantity}}. TOTAL: ${{product.price * product.quantity}}. </h5>
+    </li>
+    <button >Comprar</button>
+</ul>

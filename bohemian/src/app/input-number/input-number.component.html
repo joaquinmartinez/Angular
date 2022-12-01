@@ -1,0 +1,5 @@
+<div class="inputNumber" >
+    <button class="btnCarrito" (click)="downQuantity()">-</button>
+    <input class="inputCantidad" type="text" [(ngModel)]="quantity" (keyup)="changeQuantity($event)">
+    <button class="btnCarrito" (click)="upQuantity()">+</button>
+</div>

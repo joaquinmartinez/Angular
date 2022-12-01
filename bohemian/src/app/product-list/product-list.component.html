@@ -20,12 +20,11 @@
             <td>{{product.price | currency}}</td>
             <td *ngIf="product.stock != 0">Stock disponible</td>
             <td *ngIf="product.stock == 0">SIN STOCK</td>
-            <button *ngIf="product.stock != 0" class="btnCarrito" (click)="downQuantity(product)">-</button>
-            <input *ngIf="product.stock != 0" class="inputCantidad"
-                type="number" 
-                [(ngModel)]="product.quantity"
-                (keyup)="changeQuantity($event, product)">
-            <button *ngIf="product.stock != 0" class="btnCarrito" (click)="upQuantity(product)">+</button>
+            <td>
+                <app-input-number [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock != 0" ></app-input-number>
+                <button *ngIf="product.stock != 0" class="btn-comprar" (click)="addToCart(product)">Comprar</button>
+            </td>
+            
         </tr>
         
         
